@@ -10,7 +10,7 @@ ADD https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSIO
 ADD https://github.com/gruntwork-io/terragrunt/releases/download/${TG_VERSION}/terragrunt_linux_amd64 /usr/local/bin/terragrunt
 ADD https://storage.googleapis.com/kubernetes-release/release/${K8CTL_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 
-RUN apt update && apt install -y git unzip && pip install awscli && \
+RUN apt update && apt install -y git unzip && pip install awscli==${CLI_VERSION} && \
     cd /usr/local/bin && unzip /usr/local/bin/terraform.zip && rm /usr/local/bin/terraform.zip && \
     chmod +x /usr/local/bin/terraform && chmod +x /usr/local/bin/terragrunt && chmod +x /usr/local/bin/kubectl
 
