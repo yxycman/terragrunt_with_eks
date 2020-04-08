@@ -1,5 +1,5 @@
 FROM python:3.7-slim
-MAINTAINER "SoftServe Inc"
+MAINTAINER "OliasInc"
 
 ARG CLI_VERSION=1.18.33
 ARG TF_VERSION=0.12.24
